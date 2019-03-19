@@ -23,6 +23,7 @@ let warn = require('./utils/warn');
 router.post('/', function (req, res) {
     let userName = req.body.userName;
     let password = req.body.password;
+
     async function fun() {
         let user = await User.findOne({$or: [{'userName': userName}, {'phone': userName}]});
         if (user) {  // TODO 数据库是否存在这条数据

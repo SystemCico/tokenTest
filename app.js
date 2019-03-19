@@ -9,7 +9,6 @@ let memoryStore = new session.MemoryStore();
 let app = express();
 let server = require('http').Server(app);
 let config = require('./app/routes/config/config.js');
-const secret='LOVE_LUCIFER_A2';
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -17,8 +16,6 @@ const cookieParser = require('cookie-parser');
 
 
 //每个模块相关入口
-let test = require('./app/routes/test');          //test模块方法入口
-let demo = require('./app/routes/demo');          //demo模块方法入口
 let user = require('./app/routes/user');          //用户--模块方法入口
 let login = require('./app/routes/login');          //登陆--模块方法入口
 
@@ -78,8 +75,6 @@ app.use(session({
 
 
 
-app.use('/test',test);
-app.use('/demo',demo);
 app.use('/user',user);
 app.use('/login',login);
 
