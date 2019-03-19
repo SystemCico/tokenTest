@@ -27,6 +27,7 @@ let options = {
     poolSize: 100, // Maintain up to 10 socket connections
 };
 console.log(url);
+mongoose.Promise = require('bluebird');
 mongoose.connect(url, options);
 
 
